@@ -18,6 +18,7 @@ export const starNewNote = () => {
     const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
 
     dispatch(activeNote(doc.id, newNote));
+    //Actualizar las notas en el sidebar
     dispatch(addNewNote(doc.id, newNote));
   };
 };
